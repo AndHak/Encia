@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -41,6 +43,10 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* globals */
+  --color-global-background: var(--global-background);
+  --color-global-selected: var(--global-selected);
 }
 
 :root {
@@ -78,6 +84,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* globals */
+  --global-background: rgb(250, 248, 246);
+  --global-selected: rgb(167,150,232);
 }
 
 .dark {
@@ -114,6 +124,9 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* globals */
+  --global-background: rgb(48, 49, 51);
 }
 
 @layer base {
@@ -122,11 +135,11 @@
   }
 
   html, body {
-    @apply h-[100%] overflow-hidden overscroll-none;
+    @apply h-[100%] overflow-hidden overscroll-none font-sans;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-global-background text-foreground;
   }
 }
 
