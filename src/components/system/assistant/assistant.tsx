@@ -1,6 +1,6 @@
 
 export default function Assistant() {
   return (
-    <div>assistant</div>
+    <div className="bg-blanco-intenso h-full">assistant</div>
   )
 }

@@ -47,6 +47,11 @@
   /* globals */
   --color-global-background: var(--global-background);
   --color-global-selected: var(--global-selected);
+  --color-blanco-lindo: var(--blanco-lindo);
+  --color-blanco-intenso: var(--blanco-intenso);
+  --color-blanco-marmol: var(--blanco-marmol);
+  --color-blanco-polar: var(--blanco-polar);
+
 }
 
 :root {
@@ -88,6 +93,10 @@
   /* globals */
   --global-background: rgb(250, 248, 246);
   --global-selected: rgb(167,150,232);
+  --blanco-lindo: rgb(242, 247, 247);
+  --blanco-intenso: rgb(248,249,250);
+  --blanco-marmol: rgb(231, 233, 234);
+  --blanco-polar: rgb(240, 248, 251);
 }
 
 .dark {
@@ -139,7 +148,7 @@
   }
 
   body {
-    @apply bg-global-background text-foreground;
+    @apply bg-background text-foreground;
   }
 }
 

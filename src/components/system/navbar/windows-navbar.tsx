@@ -7,6 +7,7 @@ import OpenSidebar from "./open-sidebar";
 import WindowControls from "./windows-controls";
 import { NavbarMenubar } from "./navbar-menubar";
 import SearchAll from "./search-all";
+import { ModeToggle } from "./theme-mode";
 
 export default function WindowsNavbar() {
     return (
@@ -23,22 +24,21 @@ export default function WindowsNavbar() {
             </div>
 
             <div>
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 items-center justify-center no-drag h-full z-50">
-                    <div>
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center no-drag h-full z-50">
+                    <div className="gap-2 flex -translate-x-4">
+                      <div className="gap-1">
                         <BackArrow />
-                        <NextArrow />
-                    </div>
-                    <div>
+                        <NextArrow /> 
+                      </div>
                         <SearchAll />
-                    </div>
-                    <div>
                         <IaButton />
                     </div>
                 </div>
             </div>
 
-            <div className="justify-end h-full p-0 m-0 text-muted-foreground no-drag flex">
-                <div className="items-center h-full flex">
+            <div className="justify-end h-full p-0 m-0 text-muted-foreground no-drag flex gap-2">
+                <div className="items-center h-full flex gap-1">
+                    <ModeToggle/>
                     <OpenSidebar />
                 </div>
                 <WindowControls />
