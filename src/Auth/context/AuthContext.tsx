@@ -35,9 +35,12 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthContextProvider = ({ children }: AuthProviderProps) => {
     const [session, setSession] = useState<Session | null>(null);
 
+    // helper para cargar o crear el store
     const getOrLoadStore = async () => {
         let store = await getStore(".auth.json");
-        if (!store) store = await Store.load(".auth.json");
+        if (!store) {
+            store = await Store.load(".auth.json", { autoSave: false });
+        }
         return store;
     };
 
@@ -50,7 +53,9 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
     const loadSessionFromStore = async () => {
         const store = await getOrLoadStore();
         const raw = await store.get<string>("session");
-        if (raw) setSession(JSON.parse(raw) as Session);
+        if (raw) {
+            setSession(JSON.parse(raw) as Session);
+        }
     };
 
     const removeSessionFromStore = async () => {
@@ -72,10 +77,10 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
         bootstrap();
 
         const { data: listener } = supabase.auth.onAuthStateChange(
-            (_event, session) => {
-                if (session) {
-                    setSession(session);
-                    saveSessionToStore(session);
+            (_, newSession) => {
+                if (newSession) {
+                    setSession(newSession);
+                    saveSessionToStore(newSession);
                 } else {
                     setSession(null);
                     removeSessionFromStore();

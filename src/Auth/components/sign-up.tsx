@@ -41,7 +41,7 @@ export default function SignupPage() {
 
   return (
     <main className="flex flex-col h-screen">
-      <div className="h-10 w-full top-0 shrink-0 items-end justify-items-end mb-10">
+      <div className="h-10 w-full top-0 shrink-0 items-end justify-items-end mb-10 draggable">
         <WindowControls />
       </div>
 
