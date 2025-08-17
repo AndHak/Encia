@@ -49,7 +49,7 @@ export default function LoginPage() {
                     {/* Welcome text */}
                     <div className="text-center mb-12">
                         <h1 className="text-2xl font-semibold text-gray-900 mb-2">
-                            ¡Hola, bienvenido de vuelta!
+                            ¡Hola, bienvenido de vuelta! v0.2.1
                         </h1>
                         <p className="text-gray-600">
                             ¿Primera vez aquí?{" "}
