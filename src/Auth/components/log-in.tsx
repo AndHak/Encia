@@ -112,14 +112,6 @@ export default function LoginPage() {
                             Iniciar sesión
                         </Button>
 
-                        <div className="text-center">
-                            <Button
-                                variant="link"
-                                className="text-gray-600 hover:text-gray-900"
-                            >
-                                Iniciar sesión con enlace mágico
-                            </Button>
-                        </div>
 
                         <div className="relative">
                             <div className="absolute inset-0 flex items-center">
@@ -127,7 +119,7 @@ export default function LoginPage() {
                             </div>
                             <div className="relative flex justify-center text-xs uppercase">
                                 <span className="bg-white px-2 text-gray-500">
-                                    o
+                                    otras formas de iniciar sesion
                                 </span>
                             </div>
                         </div>

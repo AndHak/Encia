@@ -7,7 +7,7 @@ type AssistantContextType = {
 
 const AssistantContext = createContext<AssistantContextType | undefined>(undefined);
 
-export function AsistanContextProvider({ children }: { children: React.ReactNode }) {
+export function AsistantContextProvider({ children }: { children: React.ReactNode }) {
     const [assistantExpanded, setAssistantExpanded] = useState(true);
     const toggleAssistant = () => setAssistantExpanded(prev => !prev);
 

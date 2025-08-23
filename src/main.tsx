@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { ThemeProvider } from "./components/system/theme/theme-provider";
 import { SidebarContextProvider } from "./context/closeSidebar";
-import { AsistanContextProvider } from "./context/assistant-context";
+import { AsistantContextProvider } from "./context/assistant-context";
 import ShortcutHandler from "./components/system/shortcuts/ShortcutHandler";
 import { AuthContextProvider } from "./Auth/context/AuthContext";
 
@@ -12,10 +12,10 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
             <AuthContextProvider>
                 <SidebarContextProvider>
-                    <AsistanContextProvider>
+                    <AsistantContextProvider>
                         <ShortcutHandler />
                         <App />
-                    </AsistanContextProvider>
+                    </AsistantContextProvider>
                 </SidebarContextProvider>
             </AuthContextProvider>
         </ThemeProvider>
